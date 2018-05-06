@@ -1,0 +1,18 @@
+{
+  "name": "saleluz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "onoff": "^3.0.2",
+    "open-iconic": "^1.1.1",
+    "socket.io": "^2.1.0",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
