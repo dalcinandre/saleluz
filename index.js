@@ -8,13 +8,11 @@ const path = require( 'path' )
 const app = express()
 const server = http.createServer( app )
 const io = require( 'socket.io' )( server )
-let status = true;
 
 io.on( 'connection', ( socket ) => {
-  socket.on( 'lampada', () => {
-    status = !status
-    lampada.writeSync( 0 )
-    // lampada.writeSync( status ? 1 : 0 )
+  socket.on( 'lampada', ( data ) => {
+    lampada.writeSync( data ? 1 : 0 )
+    socket.emit( 'status', !data )
   } )
 } )
 

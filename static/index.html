@@ -35,16 +35,17 @@
     <script>
       const client = io()
 
+      let lastStatus
+      client.on( 'status', ( data ) => lastStatus = data )
+
       const app = new Vue( {
         el: '#app',
         data() {
-          return {
-            msg: 'teste'
-          }
+          return {}
         },
         methods: {
           clickMe() {
-            client.emit( 'lampada' )
+            client.emit( 'lampada', lastStatus )
           }
         }
       } )
